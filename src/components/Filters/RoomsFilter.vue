@@ -22,7 +22,7 @@
               v-model="selectedRooms[item.id]"
               :key="reloadCheckBox"
             )
-            span.check__box.cursor-pointer(@click="checkUncheck(item.id)" :style="{ backgroundColor: item.color }")
+            span.check__box.cursor-pointer(@click="checkUncheck(item.id)" :style="{ backgroundColor: item.color, opacity: 0.3 }")
             label.check__label.cursor-pointer(:for="`checkbox${index}`") {{ models[index].name }}
           .checkbox.q-pl-lg.q-pt-md
             input.check__input(
@@ -50,11 +50,8 @@
 </template>
 
 <script>
-import FilterSelect from './FilterSelect'
-
 export default {
   name: 'rooms-filter',
-  components: { FilterSelect },
   props: {
     values: {
       type: Object,
